@@ -63,21 +63,26 @@ app.post('/signin', (req, res) => {
                 console.log(error)
             }
             if (results.length != 1) {
-                console.log('no valid user found')
-            }
-            console.log(results)
-            if (results[0].password == password) {
-                console.log(`password correct! Welcome ${name}`)
-                console.log(results)
-                const token = jsonwebtoken.sign({ name, password }, secret, { expiresIn: 120 });
                 res.type('json')
-                res.send({
-                    "jwt": token,
-                    "user": results[0]
-                })
-            } else {
-                console.log('incorrect password')
+                res.send('user not found, please sign in')
+                res.end()
             }
+            try {
+                if (results[0].password == password) {
+                    console.log(`password correct! Welcome ${name}`)
+                    const token = jsonwebtoken.sign({ name, password }, secret, { expiresIn: 120 });
+                    res.type('json')
+                    res.send({
+                        "jwt": token,
+                        "user": results[0]
+                    })
+                } else {
+                    res.type('json')
+                    res.send('incorrect password')
+                }
+        } catch (error) {
+            console.log(error)
+        }
         })
     };
     connectToDatabase()
