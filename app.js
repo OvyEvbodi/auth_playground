@@ -35,8 +35,14 @@ app.get('/', (req, res) => {
     res.send('<h1>navigate to <a href=\'/signin\'>signin</a> or signup</h1>')
 })
 
+app.post('/', (req, res) => {
+    console.log(req.body)
+    res.end()
+})
+
 // signin
-app.get('/signin', (req, res) => {
+app.post('/signin', (req, res) => {
+    const { name, password } = req.body;
     const connectToDatabase = () => {
         // creates a mysql database connection
         dbConnection = mysql2.createConnection(databaseDetails);
@@ -59,6 +65,7 @@ app.get('/signin', (req, res) => {
             if (results.length != 1) {
                 console.log('no valid user found')
             }
+            console.log(results)
             if (results[0].password == password) {
                 console.log(`password correct! Welcome ${name}`)
                 console.log(results)
@@ -74,7 +81,7 @@ app.get('/signin', (req, res) => {
         })
     };
     connectToDatabase()
-    verifyUser('chee', 'notsosecure')
+    verifyUser(name, password)
 
     // close db connection
     dbConnection.end()
