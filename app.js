@@ -28,6 +28,9 @@ var tok;
 // instantiate express app
 const app = express();
 
+// express middleware
+app.use(express.json())
+
 app.get('/', (req, res) => {
     res.send('<h1>navigate to <a href=\'/signin\'>signin</a> or signup</h1>')
 })
@@ -70,13 +73,11 @@ app.get('/signin', (req, res) => {
             }
         })
     };
-
     connectToDatabase()
     verifyUser('chee', 'notsosecure')
 
     // close db connection
     dbConnection.end()
-
 })
 
 app.listen(port, () => {
