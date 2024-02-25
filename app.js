@@ -1,6 +1,7 @@
 import mysql2 from 'mysql2';
 import jsonwebtoken from 'jsonwebtoken';
 import express from 'express';
+import bcrypt from 'bcrypt';
 
 // setup mysql connection
 // set database parameters
@@ -46,7 +47,7 @@ app.post('/signin', (req, res) => {
     const connectToDatabase = () => {
         // creates a mysql database connection
         dbConnection = mysql2.createConnection(databaseDetails);
-    
+
         // establish database connection
         try {
             dbConnection.connect();
@@ -63,14 +64,19 @@ app.post('/signin', (req, res) => {
                 console.log(error)
             }
             if (results.length != 1) {
+                res.status(401)
                 res.type('json')
                 res.send('user not found, please sign in')
                 res.end()
             }
             try {
-                if (results[0].password == password) {
+                const saltRounds = 8;
+                const hashedPassword = bcrypt.hashSync(password, saltRounds);
+                const match = bcrypt.compareSync(password, hashedPassword);
+                if ( match ) {
                     console.log(`password correct! Welcome ${name}`)
                     const token = jsonwebtoken.sign({ name, password }, secret, { expiresIn: 120 });
+                    res.status(200)
                     res.type('json')
                     res.send({
                         "jwt": token,
@@ -89,7 +95,7 @@ app.post('/signin', (req, res) => {
     verifyUser(name, password)
 
     // close db connection
-    dbConnection.end()
+    // dbConnection.end()
 })
 
 app.listen(port, () => {
