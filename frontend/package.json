@@ -1,0 +1,12 @@
+{
+  "name": "auth_frontend",
+  "version": "1.0.0",
+  "description": "Frontend client for an authentication app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Ovy Evbodi",
+  "license": "ISC"
+}
