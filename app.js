@@ -80,7 +80,7 @@ app.post('/signin', (req, res) => {
                     res.type('json')
                     res.send({
                         "jwt": token,
-                        "user": results[0]
+                        "user": results[0].name
                     })
                 } else {
                     res.type('json')
