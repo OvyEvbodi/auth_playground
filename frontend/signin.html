@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>V-auth signin</title>
 </head>
 <body>
@@ -12,13 +13,19 @@
         </nav>
     </header>
     <main>
-        <form>
-            <label for="name">username</label>
-            <input name="name" type="text" />
-            <label for="password">password</label>
-            <input name="password" type="text" />
-            <button>Sign in</button>
-        </form>
+        <div class="signin_form_wrap">
+            <form class="signin_form">
+                <div class="form_element">
+                    <label for="name">username</label>
+                    <input name="name" type="text" />
+                </div>
+                <div class="form_element">
+                    <label for="password">password</label>
+                    <input name="password" type="text" />
+                </div>
+                <button>Sign in</button>
+            </form>
+        </div>
     </main>
 </body>
 </html>
