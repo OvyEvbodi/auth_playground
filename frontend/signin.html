@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>V-auth signin</title>
 </head>
-<body>
+<body class=".rubik-font">
     <header>
         <nav>
             <a href="index.html">Home</a>
@@ -15,15 +18,22 @@
     <main>
         <div class="signin_form_wrap">
             <form class="signin_form">
+                <h2 class="form_header">Signin</h2>
                 <div class="form_element">
-                    <label for="name">username</label>
-                    <input name="name" type="text" />
+                    <!-- <label for="name"></label> -->
+                    <input class="input_field" name="name" type="text" placeholder="Enter Username"/>
                 </div>
                 <div class="form_element">
-                    <label for="password">password</label>
-                    <input name="password" type="text" />
+                    <!-- <label for="password">password</label> -->
+                    <input class="input_field" name="password" type="text" placeholder="Enter password" />
                 </div>
-                <button>Sign in</button>
+                <div class="form_element">
+                    <button class="btn signin_btn">Sign in</button>
+                </div>
+                <div class="form_footer">
+                    <p class="signup_link">New here, <a>signup</a></p>
+                    <p class="signup_link"><a>forgot password?</a></p>
+                </div>
             </form>
         </div>
     </main>

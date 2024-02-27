@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    scroll-behavior: smooth;
+}
+:root{
+    --primary_color:rgb(255, 255, 255);
+    --secondary_color: rgb(56, 58, 59);
+    --accent_color:rgb(49, 123, 242);
+    --text_color_light:#fff;
+    --text_color_dark: rgb(84, 83, 83);
+}
+/* .rubik-font {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  } */
+
+body {
+    background-color: var(--primary_color);
+    color: var(--text_color_dark);
+    font-family: sans-serif;
+}
+
+/* Dark mode */
+/* body {
+    background-color: var(--secondary_color);
+    color: var(--text_color_light);
+    font-family: sans-serif;
+    max-height: 100vh;
+} 
+a {
+    color: var(--text_color_light);
+}
+*/
+.signin_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem 1.5rem;
+    max-width: 40vw;
+    border-radius: 7px;
+    background-color: var(--primary_color);
+    margin: auto;
+    box-shadow: 3px 3px 8px 0px var(--secondary_color);
+    min-width: 300px;
+    min-height: 350px;
+}
+.signin_form_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.form_header {
+    /* margin-bottom: 0rem; */
+}
+.form_element {
+    width: 100%;
+    /* background-color: aqua; */
+}
+.input_field {
+    padding: 1.2rem 1rem 0.5rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    border: 1px solid var(--accent_color);
+    border-radius: 4px;
+    font-weight: 300;
+    font-size: 16px;
+}
+.btn {
+    background-color: var(--accent_color);
+    border-radius: 4px;
+    max-width: fit-content;
+    padding: 0.5rem 1.2rem;
+    color: var(--primary_color);
+    outline: none;
+    border: none;
+    transition: all 400ms ease; 
+}
+.btn:hover {
+    opacity: 0.9;
+}
+.form_footer {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 200;
+    font-size: 12px;
+}
+.signup_link > a {
+    color: var(--accent_color);
+    transition: all 400ms ease;
+}
+.signup_link > a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
