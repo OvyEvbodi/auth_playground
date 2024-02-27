@@ -25,7 +25,7 @@ body {
 }
 
 /* Dark mode */
-/* body {
+body {
     background-color: var(--secondary_color);
     color: var(--text_color_light);
     font-family: sans-serif;
@@ -34,8 +34,9 @@ body {
 a {
     color: var(--text_color_light);
 }
-*/
+
 .signin_form {
+    color: var(--text_color_dark);
     display: flex;
     flex-direction: column;
     justify-content: space-around;

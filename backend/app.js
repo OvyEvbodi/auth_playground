@@ -32,6 +32,15 @@ const app = express();
 // express middleware
 app.use(express.json())
 
+// Allow CORS 
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Origin', '*');
+    res.setHeader('Content-Type', 'Application/json');
+    res.setHeader('Access-Control-Allow-Headers', '*')
+    next()
+})
+
 app.get('/', (req, res) => {
     res.send('<h1>navigate to <a href=\'/signin\'>signin</a> or signup</h1>')
 })
