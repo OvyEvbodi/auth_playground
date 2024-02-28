@@ -46,8 +46,8 @@ a {
     background-color: var(--primary_color);
     margin: auto;
     box-shadow: 3px 3px 8px 0px var(--secondary_color);
-    min-width: 400px;
-    min-height: 450px;
+    min-width: 260px;
+    min-height: 320px;
 }
 .signin_form_wrap {
     position: absolute;
@@ -98,4 +98,12 @@ a {
 .signup_link > a:hover {
     opacity: 0.8;
     text-decoration: underline;
+}
+
+/* media queries for tablet and desktop views */
+@media (min-width: 600px){
+    .signin_form {
+        min-width: 400px;
+        min-height: 450px;
+    }
 }
