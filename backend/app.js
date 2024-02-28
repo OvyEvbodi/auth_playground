@@ -91,6 +91,7 @@ app.post('/signin', (req, res) => {
                         "user": results[0].name
                     })
                 } else {
+                    console.log('incorrect password, please try again')
                     res.type('json')
                     res.status(401)
                     res.send('incorrect password')
@@ -104,7 +105,7 @@ app.post('/signin', (req, res) => {
     verifyUser(name, password)
 
     // close db connection
-    // dbConnection.end()
+    dbConnection.end()
 })
 
 app.listen(port, () => {
