@@ -80,8 +80,7 @@ app.post('/signin', (req, res) => {
             }
             try {
                 const saltRounds = 8;
-                const hashedPassword = bcrypt.hashSync(password, saltRounds);
-                const match = bcrypt.compareSync(password, hashedPassword);
+                const match = bcrypt.compareSync(password, results[0].password);
                 if ( match ) {
                     console.log(`password correct! Welcome ${name}`)
                     const token = jsonwebtoken.sign({ name, password }, secret, { expiresIn: 120 });
