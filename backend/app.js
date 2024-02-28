@@ -79,7 +79,6 @@ app.post('/signin', (req, res) => {
                 res.end()
             }
             try {
-                const saltRounds = 8;
                 const match = bcrypt.compareSync(password, results[0].password);
                 if ( match ) {
                     console.log(`password correct! Welcome ${name}`)

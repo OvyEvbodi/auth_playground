@@ -25,7 +25,7 @@ body {
 }
 
 /* Dark mode */
-body {
+/* body {
     background-color: var(--secondary_color);
     color: var(--text_color_light);
     font-family: sans-serif;
@@ -33,7 +33,7 @@ body {
 } 
 a {
     color: var(--text_color_light);
-}
+} */
 
 .signin_form {
     color: var(--text_color_dark);
@@ -46,8 +46,8 @@ a {
     background-color: var(--primary_color);
     margin: auto;
     box-shadow: 3px 3px 8px 0px var(--secondary_color);
-    min-width: 300px;
-    min-height: 350px;
+    min-width: 400px;
+    min-height: 450px;
 }
 .signin_form_wrap {
     position: absolute;
@@ -63,11 +63,11 @@ a {
     /* background-color: aqua; */
 }
 .input_field {
-    padding: 1.2rem 1rem 0.5rem;
+    padding: 1rem 0.5rem;
     width: 100%;
     outline: none;
     border: none;
-    border: 1px solid var(--accent_color);
+    border: 1px solid rgba(56, 58, 59, 0.2);
     border-radius: 4px;
     font-weight: 300;
     font-size: 16px;
