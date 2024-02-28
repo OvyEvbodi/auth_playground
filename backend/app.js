@@ -73,7 +73,7 @@ app.post('/signin', (req, res) => {
                 console.log(error)
             }
             if (results.length != 1) {
-                res.status(401)
+                res.status(404)
                 res.type('json')
                 res.send('user not found, please sign in')
                 res.end()
@@ -92,6 +92,7 @@ app.post('/signin', (req, res) => {
                     })
                 } else {
                     res.type('json')
+                    res.status(401)
                     res.send('incorrect password')
                 }
         } catch (error) {
